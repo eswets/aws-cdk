@@ -299,6 +299,11 @@ pipeline.addApplicationStage(new MyApplication(this, 'Production', {
 }));
 ```
 
+> Be aware that adding new stages via `addApplicationStage()` will automatically
+> add them to the pipeline and deploy the new stacks, but *removing* them from the
+> pipeline will not delete existing stacks. You must delete those stacks by hand
+> using the AWS CloudFormation console or the AWS CLI.
+
 ### More Control
 
 Every *Application Stage* added by `addApplicationStage()` will lead to the addition of
